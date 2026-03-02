@@ -83,7 +83,7 @@ document.getElementById('formulario').addEventListener('submit', async function(
 
     const formData = new FormData(this);
 
-    const response = await fetch('http://localhost:3000/generar-pdf', {
+    const response = await fetch("https://ircep-pdf-generator.onrender.com/generar-pdf"), {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
