@@ -1,0 +1,145 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/Template.dwt" codeOutsideHTMLIsLocked="false" -->
+<link rel="shortcut icon" type="image/x-icon" href="img/ircep-icon.ico"/>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Instituto Registral y Catastral del Estado de Puebla</title>
+<!-- InstanceEndEditable -->
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <!--<link rel="stylesheet" href="css/estilos_VEDA.css"> -->
+<!--    <link rel="stylesheet" href="css/estilos.css">-->
+<!--    <link rel="stylesheet" href="css/bootstrap.min.css">-->
+<!--     <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">-->
+<!--    <link href="css/estilos.css" rel="stylesheet" type="text/css" />-->
+<!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable -->
+</head>
+
+<body>
+<header>
+
+    <title>Formulario Profesional</title>
+</head>
+<body>
+
+<h2>Completa tus datos</h2>
+
+<form id="formulario">
+    <input type="text" name="nombre" placeholder="Datos del propietario" required>
+    <input type="text" name="apellido" placeholder="Nombre del propietario" required>
+    <input type="text" name="calle" placeholder="Calle" required>
+    <input type="text" name="aField" placeholder="No Ext" required>
+    <input type="text" name="bField" placeholder="No Int" required>
+    <input type="text" name="cField" placeholder="Colonia o Fracc" required>
+    <input type="text" name="dField" placeholder="Localidad" required>
+    <input type="text" name="eField" placeholder="Municipio" required>
+    <input type="text" name="fField" placeholder="Estado" required>
+    <input type="text" name="gField" placeholder="Teléfono de Contacto" required>
+    <input type="text" name="hField" placeholder="Celular" required>
+    <input type="text" name="iField" placeholder="Correo Electrónico" required>    
+    <input type="text" name="jField" placeholder="DATOS DEL INMUEBLE" required>
+    <input type="text" name="kField" placeholder="Denominación del Inmueble" required>
+    <input type="text" name="lField" placeholder="Calle 2" required>
+    <input type="text" name="mField" placeholder="No Ext_2" required>
+    <input type="text" name="nField" placeholder="No Int_2" required>    
+    <input type="text" name="oField" placeholder="Colonia o Fracc_2" required>
+    <input type="text" name="pField" placeholder="Localidad_2" required>
+    <input type="text" name="qField" placeholder="Municipio_2" required>
+    <input type="text" name="rField" placeholder="Estado_2" required>
+    <input type="text" name="sField" placeholder="Superficie" required>
+    <input type="text" name="tField" placeholder="Fecha de la escritura" required>
+    <input type="text" name="uField" placeholder="Partida" required>
+    <input type="text" name="vField" placeholder="undefined" required>
+    <input type="text" name="wField" placeholder="undefined_2" required>
+    <input type="text" name="xField" placeholder="Tomo número" required>
+    <input type="text" name="yField" placeholder="Folio real electrónico" required>
+    <input type="text" name="zField" placeholder="DATOS DE LA OPERACIÓN" required>
+    <input type="text" name="aaField" placeholder="TIPO DE LA OPERACIÓNRow1" required>
+    <input type="text" name="abField" placeholder="Nombre" required>
+    <input type="text" name="acField" placeholder="Código Postal" required>
+    <input type="text" name="adField" placeholder="Teléfono" required>
+    <input type="text" name="aeField" placeholder="Distrito Judicial" required>
+    <input type="text" name="afField" placeholder="Calle_3" required>
+    <input type="text" name="agField" placeholder="Núm Exterior" required>
+    <input type="text" name="ahField" placeholder="Núm InteriorLetra" required>
+    <input type="text" name="aiField" placeholder="Colonia" required>
+    <input type="text" name="ajField" placeholder="Localidad_3" required>
+    <input type="text" name="akField" placeholder="Municipio_3" required>   
+    <input type="text" name="alField" placeholder="Estado_3" required>  
+    <button type="submit">Descargar PDF</button>
+</form>
+
+
+    </footer>
+   
+</body>
+
+
+<!-- vpf002 -->
+<script>
+document.getElementById('formulario').addEventListener('submit', async function(e) {
+    e.preventDefault();
+
+    const formData = new FormData(this);
+
+    const response = await fetch('http://localhost:3000/generar-pdf', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+            nombre: formData.get('nombre'),
+            apellido: formData.get('apellido'),
+            calle: formData.get('calle'),
+            aField1: formData.get('aField'),
+            bField2: formData.get('bField'),
+            cField3: formData.get('cField'),
+            dField4: formData.get('dField'),
+            eField5: formData.get('eField'),
+            fField6: formData.get('fField'),
+            gField7: formData.get('gField'),
+            hField8: formData.get('hField'),
+            iField9: formData.get('iField'),
+            jField10: formData.get('jField'),
+            kField11: formData.get('kField'),
+            lField12: formData.get('lField'),
+            mField13: formData.get('mField'),
+            nField14: formData.get('nField'),
+            oField15: formData.get('oField'),
+            pField16: formData.get('pField'),
+            qField17: formData.get('qField'),
+            rField18: formData.get('rField'),
+            sField19: formData.get('sField'),
+            tField20: formData.get('tField'),            
+            uField21: formData.get('uField'),
+            vField22: formData.get('vField'),
+            wField23: formData.get('wField'),
+            xField24: formData.get('xField'),
+            yField25: formData.get('yField'),
+            zField26: formData.get('zField'),
+            aaField27: formData.get('aaField'),
+            abField28: formData.get('abField'),
+            acField29: formData.get('acField'),
+            adField30: formData.get('adField'),
+            aeField31: formData.get('aeField'),
+            afField32: formData.get('afField'),
+            agField33: formData.get('agField'),
+            ahField34: formData.get('ahField'),
+            aiField35: formData.get('aiField'),
+            ajField36: formData.get('ajField'),
+            akField37: formData.get('akField'),
+            alField38: formData.get('alField'),
+        })
+    });
+
+    if (!response.ok) {
+        alert("Error al generar el PDF");
+        return;
+    }
+
+    const blob = await response.blob();
+    const link = document.createElement('a');
+    link.href = window.URL.createObjectURL(blob);
+    link.download = 'VPF002.pdf';
+    link.click();
+});
+</script>
